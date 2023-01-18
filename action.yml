@@ -3,6 +3,9 @@
 name: 'Liquibase Tag Action'
 description: 'Mark the current database state with the specified tag'
 inputs:
+  database: # string
+    description: ''
+    required: false
   defaultCatalogName: # string
     description: 'The default catalog name to use for the database connection'
     required: false
@@ -26,6 +29,9 @@ inputs:
     required: true
   username: # string
     description: 'Username to use to connect to the database'
+    required: false
+  alwaysDropInsteadOfReplace: # bool
+    description: 'If true, drop and recreate a view instead of replacing it.'
     required: false
   alwaysOverrideStoredLogicSchema: # bool
     description: 'When generating SQL for createProcedure, should the procedure schema be forced to the default schema if no schemaName attribute is set?'
@@ -196,6 +202,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.database }}
     - ${{ inputs.defaultCatalogName }}
     - ${{ inputs.defaultSchemaName }}
     - ${{ inputs.driver }}
@@ -204,6 +211,7 @@ runs:
     - ${{ inputs.tag }}
     - ${{ inputs.url }}
     - ${{ inputs.username }}
+    - ${{ inputs.alwaysDropInsteadOfReplace }}
     - ${{ inputs.alwaysOverrideStoredLogicSchema }}
     - ${{ inputs.autoReorg }}
     - ${{ inputs.changelogLockPollRate }}
