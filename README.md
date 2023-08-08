@@ -18,11 +18,6 @@ steps:
     # Required
     url: ""
 
-    # 
-    # string
-    # Optional
-    database: ""
-
     # The default catalog name to use for the database connection
     # string
     # Optional
@@ -47,11 +42,6 @@ steps:
     # string
     # Optional
     password: ""
-
-    # 
-    # bool
-    # Optional
-    skipDatabaseStep: ""
 
     # Username to use to connect to the database
     # string
