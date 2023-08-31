@@ -18,6 +18,11 @@ steps:
     # Required
     url: ""
 
+    # [PRO] Add entry to Database Changelog table
+    # bool
+    # Optional
+    addRow: ""
+
     # The default catalog name to use for the database connection
     # string
     # Optional
