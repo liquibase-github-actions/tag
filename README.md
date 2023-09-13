@@ -6,7 +6,7 @@ Mark the current database state with the specified tag
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/tag@v4.23.1
+- uses: liquibase-github-actions/tag@v4.23.2
   with:
     # Tag to add to the database changelog table
     # string
@@ -65,7 +65,7 @@ The liquibase tag action accepts all valid liquibase global options as optional 
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/tag@v4.23.1
+  - uses: liquibase-github-actions/tag@v4.23.2
     with:
       tag: ""
       url: ""
